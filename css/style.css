@@ -1,0 +1,132 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* RESIZE 1px = 1rem */
+  font-size: 6.25%;
+
+
+  /* PALETA DE CORES */
+  /* BACKGROUNDS */
+  --bg-primary: hsla(233, 100%, 97%, 1);
+  --bg-secondary: hsla(218, 17%, 62%, 1);
+  --bg-heading: hsla(275, 18%, 79%, 1);
+  --bg-tag: hsla(312, 91%, 96%, 1);
+  /* FONT-COLOR */
+  --fc-heading-1: hsla(0, 0%, 100%, 1);
+  --fc-texting: hsla(274, 84%, 12%, 1);
+  --fc-tag: hsla(232, 17%, 35%, 1);
+
+
+  /* MEDIDAS */
+  --fs-heading-1: clamp(40rem, 40rem + 5vw, 48rem);
+  --fs-tag: 20rem;
+  --fs-texting: 20rem;
+
+
+  /* FONTES
+
+  font-family: 'Open Sans', sans-serif;
+  font-family: 'Palanquin', sans-serif;
+  font-family: 'Roboto', sans-serif;
+  font-family: 'Staatliches', cursive; 
+  */
+}
+
+body {
+  background-color: var(--bg-primary);
+}
+
+.page {
+  margin: 0 auto;
+}
+
+header {
+  background-color: var(--bg-secondary);
+}
+
+header {
+  /* max-width: 384rem; */
+  height: 280rem;
+  margin: 0 auto;
+}
+
+header svg {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto 32rem;
+}
+
+header h1 {
+  font-family: 'Staatliches';
+  font-size: var(--fs-heading-1);
+  line-height: 34rem;
+  letter-spacing: 0.05em;
+  text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+  text-align: center;
+  text-transform: uppercase;
+  color: var(--fc-heading-1);
+
+  background-color: var(--bg-heading);
+
+  padding: 8rem 0;
+  margin: 0 auto 30rem;
+}
+
+main {
+  max-width: 320rem;
+  margin: 0 auto;
+}
+
+main p {
+  font-family: 'Palanquin';
+  font-size: var(--fs-texting);
+  line-height: 15rem;
+  text-align: center;
+  color: var(--fc-texting);
+
+  margin: 15rem auto 65rem;
+
+  display: flex;
+  align-items: center;
+}
+
+main .cards {
+  margin-bottom: 60rem;
+
+  display: grid;
+  gap: 32rem;
+}
+
+.card {
+  position: relative;
+}
+
+.card img {
+  max-width: 320rem;
+  object-fit: cover;
+
+  border-radius: 20px;
+}
+
+.card h2 {
+  font-family: 'Staatliches';
+  font-size: var(--fs-tag);
+  line-height: 34rem;
+  letter-spacing: 0.05px;
+  text-transform: uppercase;
+  color: var(--fc-texting);
+
+  background-color: var(--bg-tag);
+
+  padding: 1rem 24rem;
+  border-radius: 20px;
+
+  position: absolute;
+  top: 16rem;
+  right: 16px;
+
+}
