@@ -1,0 +1,13 @@
+@media (min-width: 540px) {
+  .cards {
+    grid-auto-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 3fr 2fr 1fr 2fr 3fr;
+    grid-template-areas:
+      "A B"
+      "A B"
+      "A C"
+      "D C"
+      "D C";
+  }
+}

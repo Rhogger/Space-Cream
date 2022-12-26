@@ -45,13 +45,10 @@ body {
 }
 
 header {
-  background-color: var(--bg-secondary);
-}
-
-header {
-  /* max-width: 384rem; */
   height: 280rem;
   margin: 0 auto;
+
+  background-color: var(--bg-secondary);
 }
 
 header svg {
@@ -77,36 +74,69 @@ header h1 {
 }
 
 main {
-  max-width: 320rem;
+  padding: 0 32rem;
   margin: 0 auto;
 }
 
 main p {
-  font-family: 'Palanquin';
+  font-family: 'Roboto', sans-serif;
   font-size: var(--fs-texting);
-  line-height: 15rem;
+  line-height: 24rem;
   text-align: center;
   color: var(--fc-texting);
 
-  margin: 15rem auto 65rem;
+  margin: 20rem auto 65rem;
 
   display: flex;
   align-items: center;
 }
 
-main .cards {
-  margin-bottom: 60rem;
+.cards {
+  width: 100%;
+
+  margin: 0 auto 60rem;
 
   display: grid;
-  gap: 32rem;
+  grid-gap: 32rem;
+  grid-auto-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-areas:
+    "A"
+    "A"
+    "B"
+    "C"
+    "C"
+    "D";
 }
 
 .card {
   position: relative;
 }
 
-.card img {
-  max-width: 320rem;
+.card:nth-child(1) {
+  grid-area: A;
+}
+
+.card:nth-child(2) {
+  grid-area: B;
+}
+
+.card:nth-child(3) {
+  grid-area: C;
+}
+
+.card:nth-child(4) {
+  grid-area: D;
+}
+
+.card>img {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+
+  width: 100%;
+  height: 100%;
+
   object-fit: cover;
 
   border-radius: 20px;
@@ -128,5 +158,25 @@ main .cards {
   position: absolute;
   top: 16rem;
   right: 16px;
+}
 
+
+
+/* SCROLLBAR */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #ffffff00;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--fc-tag);
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar-track:hover {
+  background: hsla(var(--main-hsl), 50%, 80%, 0.1);
 }
