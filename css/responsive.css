@@ -1,4 +1,12 @@
 @media (min-width: 540px) {
+  header p {
+    padding: 40rem auto 0;
+  }
+
+  main {
+    padding: 0 56rem 60rem;
+  }
+
   .cards {
     grid-auto-columns: 1fr;
     grid-template-columns: repeat(2, 1fr);
@@ -9,5 +17,185 @@
       "A C"
       "D C"
       "D C";
+  }
+}
+
+@media (min-width: 980px) {
+  .page {
+    display: grid;
+    grid-template-columns: 25% 75%;
+  }
+
+  header {
+    min-width: 270rem;
+  }
+
+  header p {
+    font-size: var(--fs-texting);
+    line-height: 20px;
+    color: var(--fc-heading);
+
+    background-color: var(--bg-secondary);
+
+    padding: 0;
+    margin: 0 12.5%;
+
+    display: block;
+  }
+
+  header p span {
+    margin: 10rem;
+    display: block;
+  }
+
+  main {
+    padding: 0 8%;
+  }
+
+  main p {
+    font-family: 'Open Sans';
+    font-size: var(--fs-texting);
+    line-height: 28px;
+    text-align: center;
+    color: var(--fc-tag);
+
+    margin: 0 auto 46rem;
+
+    display: block;
+  }
+
+  main p span {
+    font-weight: bold;
+  }
+
+  .cards {
+    margin: 64rem auto 50rem;
+
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 29rem 29rem 29rem 29rem 29rem 29rem 29rem 29rem 29rem 29rem;
+    grid-template-areas:
+      "A B C"
+      "A B C"
+      "A B C"
+      "D B F"
+      "D B F"
+      "D B F"
+      "D B F"
+      "D E F"
+      "D E F"
+      "D E F";
+  }
+
+  .card:nth-child(5) {
+    display: initial;
+
+    grid-area: E;
+  }
+
+  .card:nth-child(6) {
+    display: initial;
+
+    grid-area: F;
+  }
+
+  .card h2 {
+    display: none;
+  }
+
+
+  /* ANIMAÇÔES */
+  header h1,
+  header p {
+    animation: topToBottom 1000ms;
+  }
+
+  .card img,
+  .card h2 {
+    animation: none;
+  }
+
+  @keyframes hidden {
+    0% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+
+  .card:nth-child(1) {
+    animation: hidden 1000ms;
+  }
+
+  .card:nth-child(2) {
+    animation: hidden 2000ms;
+  }
+
+  .card:nth-child(3) {
+    animation: hidden 3500ms;
+  }
+
+  .card:nth-child(4) {
+    animation: hidden 1500ms;
+  }
+
+  .card:nth-child(5) {
+    animation: hidden 2500ms;
+  }
+
+  .card:nth-child(6) {
+    animation: hidden 4000ms;
+  }
+
+}
+
+@media (min-width: 1440px) {
+  :root {
+    --fs-texting: 18rem;
+  }
+
+  header p {
+    line-height: 26px;
+  }
+
+  .cards {
+    grid-template-rows: 32rem 32rem 32rem 32rem 32rem 32rem 32rem 32rem 32rem 32rem;
+  }
+}
+
+@media (min-width: 1800px) {
+  :root {
+    --fs-heading: 60rem;
+    --fs-texting: 20rem;
+  }
+
+  header h1 {
+    padding: 20rem 0;
+  }
+
+  .cards {
+    grid-template-rows: 40rem 40rem 40rem 40rem 40rem 40rem 40rem 40rem 40rem 40rem;
+  }
+}
+
+@media (min-width: 2200px) {
+  :root {
+    --fs-heading: 60rem;
+    --fs-texting: 20rem;
+  }
+
+  header p {
+    line-height: 30px;
+  }
+
+  .cards {
+    grid-template-rows: 50rem 50rem 50rem 50rem 50rem 50rem 50rem 50rem 50rem 50rem;
+  }
+}
+
+@media (min-width: 2400px) {
+  .cards {
+    grid-template-rows: 60rem 60rem 60rem 60rem 60rem 60rem 60rem 60rem 60rem 60rem;
   }
 }

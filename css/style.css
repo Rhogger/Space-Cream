@@ -11,24 +11,23 @@
 
   /* PALETA DE CORES */
   /* BACKGROUNDS */
-  --bg-primary: hsla(233, 100%, 97%, 1);
-  --bg-secondary: hsla(218, 17%, 62%, 1);
-  --bg-heading: hsla(275, 18%, 79%, 1);
-  --bg-tag: hsla(312, 91%, 96%, 1);
+  --bg-primary: hsl(233, 100%, 97%);
+  --bg-secondary: hsl(218, 17%, 62%);
+  --bg-heading: hsl(275, 18%, 79%);
+  --bg-tag: hsl(312, 91%, 96%);
   /* FONT-COLOR */
-  --fc-heading-1: hsla(0, 0%, 100%, 1);
-  --fc-texting: hsla(274, 84%, 12%, 1);
-  --fc-tag: hsla(232, 17%, 35%, 1);
+  --fc-heading: hsl(0, 0%, 100%);
+  --fc-texting: hsl(274, 84%, 12%);
+  --fc-tag: hsl(232, 17%, 35%);
 
 
   /* MEDIDAS */
-  --fs-heading-1: clamp(40rem, 40rem + 5vw, 48rem);
+  --fs-heading: 40rem;
   --fs-tag: 20rem;
-  --fs-texting: 20rem;
+  --fs-texting: 16rem;
 
 
   /* FONTES
-
   font-family: 'Open Sans', sans-serif;
   font-family: 'Palanquin', sans-serif;
   font-family: 'Roboto', sans-serif;
@@ -42,10 +41,11 @@ body {
 
 .page {
   margin: 0 auto;
+
+  height: 100vh;
 }
 
 header {
-  height: 280rem;
   margin: 0 auto;
 
   background-color: var(--bg-secondary);
@@ -59,42 +59,49 @@ header svg {
 
 header h1 {
   font-family: 'Staatliches';
-  font-size: var(--fs-heading-1);
-  line-height: 34rem;
+  font-size: var(--fs-heading);
+  line-height: 34px;
   letter-spacing: 0.05em;
   text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
   text-align: center;
   text-transform: uppercase;
-  color: var(--fc-heading-1);
+  color: var(--fc-heading);
 
   background-color: var(--bg-heading);
 
-  padding: 8rem 0;
+  padding: 10rem 0;
   margin: 0 auto 30rem;
 }
 
-main {
-  padding: 0 32rem;
-  margin: 0 auto;
-}
-
-main p {
+header p {
   font-family: 'Roboto', sans-serif;
   font-size: var(--fs-texting);
-  line-height: 24rem;
+  line-height: 24px;
   text-align: center;
   color: var(--fc-texting);
 
+  background-color: var(--bg-primary);
+
+  padding: 40rem 32rem 0;
   margin: 40rem auto 65rem;
 
   display: flex;
   align-items: center;
 }
 
+header p span {
+  display: none;
+}
+
+main {
+  padding: 0 32rem 60rem;
+  margin: 0 auto;
+}
+
 .cards {
   width: 100%;
 
-  margin: 0 auto 60rem;
+  margin: 0 auto;
 
   display: grid;
   grid-gap: 32rem;
@@ -127,6 +134,14 @@ main p {
   grid-area: D;
 }
 
+.card:nth-child(5) {
+  display: none;
+}
+
+.card:nth-child(6) {
+  display: none;
+}
+
 .card img {
   margin: 0 auto;
   display: flex;
@@ -136,6 +151,7 @@ main p {
   height: 100%;
 
   object-fit: cover;
+  filter: brightness(0.3);
 
   border-radius: 20px;
 }
@@ -143,10 +159,10 @@ main p {
 .card h2 {
   font-family: 'Staatliches';
   font-size: var(--fs-tag);
-  line-height: 34rem;
+  line-height: 34px;
   letter-spacing: 0.05px;
   text-transform: uppercase;
-  color: var(--fc-texting);
+  color: var(--fc-tag);
 
   background-color: var(--bg-tag);
 
@@ -158,10 +174,90 @@ main p {
   right: 16px;
 }
 
+main p {
+  display: none;
+}
 
+
+
+/* ANINAÇÕES */
+@keyframes topToBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(-200px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+header svg {
+  animation: topToBottom 1000ms;
+}
+
+
+@keyframes bottomToTop {
+  0% {
+    opacity: 0;
+    transform: translateY(200px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+header h1 {
+  animation: bottomToTop 1000ms;
+}
+
+
+@keyframes leftToRight {
+  0% {
+    opacity: 0;
+    transform: translateX(-200px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+.card h2 {
+  animation: leftToRight 1000ms;
+}
+
+
+@keyframes rightToLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(200px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+.card img {
+  animation: rightToLeft 1000ms;
+}
+
+.card:hover img {
+  transform: scale(1.1);
+  filter: brightness(1);
+}
+
+.card:hover h2 {
+  opacity: 0.3;
+}
 
 /* SCROLLBAR */
-
 ::-webkit-scrollbar {
   width: 8px;
 }
